@@ -175,3 +175,10 @@ header{
     display: inline-block;
     margin-right: 15px;
 }
+.time_posted{
+    font-size: 10px;
+    font-weight: 300;
+    color: #111;
+    padding: 0px 16px;
+    text-transform: uppercase;
+}
