@@ -14,8 +14,8 @@ class PostListView(ListView):
     context_object_name = 'posts'
     
 class PostCreateView(CreateView):
-    template = 'miniIG/post_create.html'
-    from_class = PostForm
+    template_name = 'miniIG/post_create.html'
+    form_class = PostForm
     queryset = Post.objects.all()
     success_url = '/'
     
