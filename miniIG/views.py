@@ -17,3 +17,8 @@ class PostCreateView(CreateView):
     template = 'miniIG/post_create.html'
     from_class = PostForm
     queryset = Post.objects.all()
+    
+    def form_valid(self,form):
+        print(form.cleaned_data)
+        form.instance.author = self.request.user
+        return super().form_valid(form)
