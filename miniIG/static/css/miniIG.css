@@ -100,3 +100,7 @@ header{
     border: 0 solid #000;
     border-radius: 50%;
 }
+.post_info{
+    display: inline-block;
+    padding-left: 15px;
+}
