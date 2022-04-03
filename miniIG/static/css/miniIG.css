@@ -3,8 +3,7 @@ body{
 }
 
 header{
-    background-color: #fafafa;
-    border-bottom: 1px solid #ccc;
+    background-color: #ffffff;
 }
 
 .navigation{
@@ -67,10 +66,11 @@ header{
 }
 
 .content_container{
-    background-color: #fafafa;
+    background-color: #f8f7f7;
     padding-top: 50px;
     position: absolute;
     width: 100%;
     top: 83px;
     left: 0px;
+    border-top: 1px solid #ccc;
 }
