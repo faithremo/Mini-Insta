@@ -120,10 +120,9 @@ header{
 .post_options{
     font-size: 15px;
     float: right;
-    display: inline-block;
     margin: 4px;
     padding: 5px;
-    color: #cccc;
+    color: slategray;
 }
 .post_image img{
     width: 100%;
