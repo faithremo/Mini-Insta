@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.utils import timezone
 from .forms import PostForm
 from .models import Post
 from django.views.generic import (
@@ -10,7 +11,7 @@ from django.views.generic import (
 
 class PostListView(ListView):
     template_name = "miniIG/post_list.html"
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().filter(created_date__lte=timezone.now()).order_by('-created_date')
     context_object_name = 'posts'
     
 class PostCreateView(CreateView):
