@@ -5,6 +5,7 @@ from .models import Post
 from django.views.generic import (
     ListView,
     CreateView,
+    DetailView,
 )
 
 # Create your views here.
