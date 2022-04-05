@@ -1,4 +1,6 @@
 from django.urls import path, include
+from miniIG import views as v
+
 from .views import (
     PostListView,
     PostCreateView,
@@ -12,4 +14,6 @@ urlpatterns = [
     path('', PostListView.as_view(), name='post_list'),
     path('new/', PostCreateView.as_view(), name='post_create'),
     path('<int:id>', PostDetailView.as_view(), name='post_detail'),
+    path("register/", v.register, name="register"),
 ]
+

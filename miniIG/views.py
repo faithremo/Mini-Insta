@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from urllib import request
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .forms import PostForm
 from .models import Post
+from .forms import RegisterForm
 from django.views.generic import (
     ListView,
     CreateView,
@@ -32,3 +34,14 @@ class PostDetailView(DetailView):
     def get_object(self):
         id_ = self.kwargs.get('id')
         return get_object_or_404(Post, id=id_)
+    
+def register(response):
+        if response.method == "POST":
+            form = RegisterForm(response.POST)
+            if form.is_valid():
+                form.save()
+                
+                return redirect("/home")
+            else:
+                form = RegisterForm()
+                return render(response, "register.html", {"form":form})    
