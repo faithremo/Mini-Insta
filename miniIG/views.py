@@ -1,18 +1,22 @@
+
 from urllib import request
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .forms import PostForm
 from .models import Post
+from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
+from django.views.generic import TemplateView
+from django.utils.decorators import method_decorator
 from django.views.generic import (
-    ListView,
+    TemplateView,
     CreateView,
     DetailView,
 )
 
 # Create your views here.
-
-class PostListView(ListView):
+@method_decorator(login_required, name='dispatch')
+class PostListView(TemplateView):
     template_name = "miniIG/post_list.html"
     queryset = Post.objects.all().filter(created_date__lte=timezone.now()).order_by('-created_date')
     context_object_name = 'posts'
@@ -35,13 +39,13 @@ class PostDetailView(DetailView):
         id_ = self.kwargs.get('id')
         return get_object_or_404(Post, id=id_)
     
-def register(response):
-        if response.method == "POST":
-            form = RegisterForm(response.POST)
+def register(request):
+        if request.method == "POST":
+            form = RegisterForm(request.POST)
             if form.is_valid():
                 form.save()
                 
                 return redirect("/home")
             else:
                 form = RegisterForm()
-                return render(response, "register.html", {"form":form})    
+                return render(request, "register.html", {"form":form})    
