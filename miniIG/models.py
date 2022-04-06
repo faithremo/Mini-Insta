@@ -11,3 +11,28 @@ class Post(models.Model):
     
     def __str__(self):
         return self.caption
+    
+class User(models.Model):
+    username = models.CharField(max_length =30)
+    email = models.EmailField()
+    password = models.CharField(max_length =30)
+    password2 = models.CharField(max_length =30)
+    
+    def __str__(self):
+        return self.caption
+    
+    
+class Likes(models.Model):
+    image = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='imagelikes')
+    liker = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userlikes')
+
+    def __str__(self):
+        return "%s like" % self.image
+    
+class Comments(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='comments')
+    photo = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
+    comment = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return "%s comment" % self.photo
