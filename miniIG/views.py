@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
 from django.views.generic import TemplateView
 from django.utils.decorators import method_decorator
+from .models import miniIG
 from django.views.generic import (
     TemplateView,
     CreateView,
@@ -53,4 +54,11 @@ def register(request):
             
 
 def index(request):
-    return render(request, 'index.html')   
+    return render(request, 'index.html')
+
+def index(request):
+    # imports photos and save it in database
+    miniIG = miniIG.objects.all()
+    # adding context 
+    ctx = {'photo':miniIG}
+    return render(request, 'index.html', ctx)   
