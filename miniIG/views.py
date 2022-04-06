@@ -40,16 +40,17 @@ class PostDetailView(DetailView):
         id_ = self.kwargs.get('id')
         return get_object_or_404(Post, id=id_)
     
-def register(request):
-        if request.method == "POST":
-            form = RegisterForm(request.POST)
-            if form.is_valid():
-                form.save()
+# def register(request):
+#         if request.method == "POST":
+#             form = RegisterForm(request.POST)
+            
+#             if form.is_valid():
+#                 form.save()
                 
-                return redirect("/home")
-            else:
-                form = RegisterForm()
-                return render(request, "register.html", {"form":form}) 
+#                 return redirect("/home")
+#             else:
+#                 form = RegisterForm()
+#                 return render(request, "register.html", {"form":form}) 
             
             
 
