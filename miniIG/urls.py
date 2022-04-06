@@ -2,6 +2,8 @@ from django.urls import path, include, re_path
 from miniIG import views as v
 from django_registration.backends.one_step.views import RegistrationView
 from django.contrib.auth.decorators import login_required
+from django.contrib import admin
+from miniIG import views
 from .views import (
     PostListView,
     PostCreateView,
@@ -23,7 +25,8 @@ urlpatterns = [
     re_path('accounts/register/',
         RegistrationView.as_view(success_url='/profile/'),
         name='django_registration_register'),
-
+    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
 
 ]
 

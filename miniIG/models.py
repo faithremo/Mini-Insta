@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -36,3 +37,12 @@ class Comments(models.Model):
     
     def __str__(self):
         return "%s comment" % self.photo
+    
+    
+
+
+class miniIG(models.Model):
+    # title field
+    title = models.CharField(max_length=100)
+    #image field
+    image = CloudinaryField('image')

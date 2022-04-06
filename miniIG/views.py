@@ -48,4 +48,9 @@ def register(request):
                 return redirect("/home")
             else:
                 form = RegisterForm()
-                return render(request, "register.html", {"form":form})    
+                return render(request, "register.html", {"form":form}) 
+            
+            
+
+def index(request):
+    return render(request, 'index.html')   

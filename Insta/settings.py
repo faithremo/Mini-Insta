@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,9 +47,16 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'miniIG',
+    'cloudinary',
     
     
 ]
+
+cloudinary.config( 
+  cloud_name = "faithremo", 
+  api_key = "136111586444998", 
+  api_secret = "gvFxcYS_YajDqoCbNX8p9w8NyYQ" 
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

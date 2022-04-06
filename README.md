@@ -11,34 +11,34 @@ Faith Nduta
 This is a django application that resembles the Instagram App. It allows a user log in and out,to view other people's posts.It also allow a user to add,comment,like and dislike a post.
 
 ## Installation
-In order to run the application, the following installations are required: python3.8 
-django
-pip Visual Studio
-virtualenv
-requirements.txt
+In order to run the application, the following installations are required:    1. python3.8 
+2. django
+3. pip Visual Studio
+4. virtualenv
+5. requirements.txt
 
 ## Repository
 https://github.com/faithremo/Mini-Insta.git
 
 ## Technologies used
-django
-html
-bootstrap
-css
-SQLAlchemy
+1. django
+2. html
+3. bootstrap
+4. css
+5. SQLAlchemy
 
 ## Dependencies
-Psycopg2
-Django-heroku
-Django-urls
-Cloudinary
-Django-registration
-Python-decouple
-Pillow
-Django
-Django-bootstrap
-Whitenoise
-Gunicorn
+1. Psycopg2
+2. Django-heroku
+3. Django-urls
+4. Cloudinary
+5. Django-registration
+6. Python-decouple
+7. Pillow
+9. Django
+10. Django-bootstrap
+11. Whitenoise
+12. Gunicorn
 
 ## Bugs
 There are no known bugs.
