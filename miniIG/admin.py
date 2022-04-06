@@ -1,9 +1,11 @@
 from django.contrib import admin
-from .models import Post, miniIG
+from .models import *
 
 # Register your models here.
 
 admin.site.register(Post)
 
 
-admin.site.register(miniIG)
+admin.site.register(Profile)
+admin.site.register(Likes)
+admin.site.register(Comments)
