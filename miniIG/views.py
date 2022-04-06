@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
 from django.views.generic import TemplateView
 from django.utils.decorators import method_decorator
-from .models import miniIG
+from .models import *
 from django.views.generic import (
     TemplateView,
     CreateView,
