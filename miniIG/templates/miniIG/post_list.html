@@ -32,7 +32,7 @@
                 {{ post.created_date | timesince }} ago
             </div>
 
-            <form action="{% url 'comment' image_id=post.id %}
+            <form action="
             " method="POST">
                 {% csrf_token %}
                 
