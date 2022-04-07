@@ -1,4 +1,5 @@
 {% extends "miniIG/base.html" %}
+{% load bootstrap4 %}
 
 {% block content %}
     {% for post in posts %}
@@ -30,6 +31,18 @@
             <div class="time_posted">
                 {{ post.created_date | timesince }} ago
             </div>
+
+            <form action="{% url 'commenting' image_id=post.id %}
+            " method="POST">
+                {% csrf_token %}
+                
+                {% bootstrap_form form %}
+            
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-sm" value="Post">
+            </div>
+            </form>
+
         </div>
     {% endfor %}
 {% endblock %}

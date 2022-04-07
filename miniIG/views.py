@@ -53,3 +53,16 @@ def profile(request,username):
     user = User.objects.filter(username=user.username).first()
     posts = Post.objects.filter(author=user)
     return render(request, 'miniIG/profile.html', {'user': user,'posts':posts})
+
+
+def comment(request, image_id):
+    comment_form = CommentForm()
+    image = Post.objects.filter(pk=image_id).first()
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.user = request.user
+            comment.photo = image
+            comment.save()
+    return redirect("home")

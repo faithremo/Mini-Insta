@@ -13,6 +13,7 @@ header{
     justify-content: center;
     padding: 26px 20px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .navigation a{
