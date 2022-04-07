@@ -32,7 +32,7 @@
                 {{ post.created_date | timesince }} ago
             </div>
 
-            <form action="{% url 'commenting' image_id=post.id %}
+            <form action="{% url 'comment' image_id=post.id %}
             " method="POST">
                 {% csrf_token %}
                 
@@ -42,6 +42,11 @@
                 <input type="submit" class="btn btn-primary btn-sm" value="Post">
             </div>
             </form>
+
+            {% for comment in post.all_posts|slice:"2" %}
+                <p class="ml-3"><span class="font-weight-bold">{{comment.user.username}}</span>
+                    {{comment.comment}}</p>
+                {% endfor %}
 
         </div>
     {% endfor %}
