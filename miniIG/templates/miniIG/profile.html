@@ -1,0 +1,32 @@
+{% extends 'miniIG/base.html' %}
+
+{% block content %}
+<div class="row vh-50">
+    <div class="col-6">
+        <div class="card profile-pic sticky-top">
+        {% if user.profile.profile %}
+        <img src="{{user.profile.profile.url}}" class="img-fluid" alt="">
+        {% else%}
+        <p>no profile photo</p>
+        {% endif %}
+        </div>
+    </div>
+    <div class="col-6">
+        <h2>{{user.username}}</h2>
+        {% if user.profile.bio %}
+        <p>{{user.profile.bio}}</p>
+        {% else %}
+        <p>No bio</p>
+        {% endif %}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h3>posts</h3>
+    {% for post in posts%}
+    <div class="card w-25">
+        <img src="{{ post.image.url}}" alt="">
+    </div>    
+    {% endfor %}
+    {% endblock %}
+</div>

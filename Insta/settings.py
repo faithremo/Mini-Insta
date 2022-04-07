@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config,Csv
+from decouple import config
 import django_heroku
 import cloudinary
 import cloudinary.uploader

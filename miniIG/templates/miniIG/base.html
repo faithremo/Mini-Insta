@@ -23,8 +23,9 @@
                 <a class='search' href=''><i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
             <div class="contact_icons">
-                <a class="explore" href='/'><i class="fa-solid fa-circle-plus"></i></a>
-                <a class="profile" href='/'><i class="fa-regular fa-user"></i></a>
+                <a href="/post" class="btn btn-outline-dark">Add Post</a>
+                <a class="profile" href="/profile/{{user.username}}"><i class="fa-regular fa-user"></i></a>
+                <a href="/logout" class="nav-link">Logout</a>
             </div>
             {% else %}
             <a class='btn btn-dark' href="/login">Login</a>
